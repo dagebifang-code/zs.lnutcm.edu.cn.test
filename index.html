@@ -48,9 +48,7 @@ body.in-wechat .topbar .back,body.in-wechat .topbar .more,body.in-wechat .topbar
 .row:first-of-type{border-top:0}
 .cell{padding:19px 24px;border-right:1px solid #ddd;display:flex;align-items:center}
 .cell:last-child{border-right:0}
-.result-back{margin:28px 0 0;font-size:20px;color:#4098ec;background:none;border:0;cursor:pointer}
 .notice{text-align:center;color:#aaa;font-size:13px;margin-top:25px}
-.footer{text-align:center;color:#999;font-size:14px;line-height:2;padding:28px 20px 40px;border-top:1px solid #eee;margin-top:24px}
 .hidden{display:none!important}
 
 @media(max-width:600px){
@@ -125,15 +123,8 @@ body.in-wechat .topbar .back,body.in-wechat .topbar .more,body.in-wechat .topbar
         <div class="result-head">考生信息</div>
         <div id="resultRows"></div>
       </div>
-      <button class="result-back" id="backBtn">‹ 返回查询</button>
-      
     </main>
   </section>
-
-  <footer class="footer">
-    <div>辽宁中医药大学招生办公室</div>
-    <div>© 辽宁中医药大学 版权所有</div>
-  </footer>
 </div>
 
 <script>
@@ -244,12 +235,6 @@ function query(){
 
 document.getElementById("submitBtn").addEventListener("click", query);
 document.getElementById("captchaCanvas").addEventListener("click", drawCaptcha);
-document.getElementById("backBtn").addEventListener("click", ()=>{
-  document.getElementById("resultPage").classList.add("hidden");
-  document.getElementById("queryPage").classList.remove("hidden");
-  document.getElementById("captchaInput").value = "";
-  window.scrollTo(0,0);
-});
 
 if(/MicroMessenger/i.test(navigator.userAgent)){
   document.body.classList.add("in-wechat");
