@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>辽宁中医药大学本科招生录取查询</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#f7f8fa;color:#222;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",Arial,sans-serif}
+body{min-height:100vh}
+button,input,select{font:inherit}
+.app{max-width:921px;margin:0 auto;min-height:100vh;background:#fff;position:relative}
+.topbar{height:88px;background:#f5f6f8;display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid #eee}
+.topbar .back{position:absolute;left:28px;font-size:38px;font-weight:300;line-height:1}
+.topbar .more{position:absolute;right:26px;font-size:28px;letter-spacing:4px}
+.topbar-title{font-size:28px;font-weight:600;margin-top:-4px}
+.domain{position:absolute;top:51px;font-size:16px;color:#777}
+.page-title{height:94px;display:flex;align-items:center;padding:0 28px;font-size:32px;font-weight:700;background:#fff}
+.banner{margin:0 22px;height:420px;border-radius:2px 2px 35px 35px;overflow:hidden;position:relative;background:linear-gradient(120deg,#bff6df,#54baf2)}
+.banner:before{content:"";position:absolute;width:430px;height:430px;right:-40px;bottom:-160px;background:linear-gradient(135deg,#dcefff,#2f91f0);transform:rotate(-10deg);opacity:.8}
+.banner:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 12% 45%,rgba(255,255,255,.38),transparent 16%),radial-gradient(circle at 86% 18%,rgba(255,255,255,.35),transparent 5%)}
+.banner-text{position:absolute;left:55px;top:105px;z-index:2;color:#fff;font-size:62px;font-weight:700;letter-spacing:12px;text-shadow:0 0 14px rgba(255,255,255,.55)}
+.banner-art{position:absolute;right:48px;bottom:35px;width:330px;height:245px;z-index:2}
+.tower{position:absolute;bottom:0;width:58px;background:linear-gradient(90deg,#4b9ff2,#176ee7);box-shadow:0 14px 30px rgba(40,100,180,.18)}
+.t1{height:175px;left:90px}.t2{height:120px;left:160px}.t3{height:90px;left:230px;background:linear-gradient(90deg,#fff,#dbeafa)}
+.books{position:absolute;left:15px;bottom:0;width:190px;height:78px;background:linear-gradient(#fff,#dceafa);transform:skew(-15deg);box-shadow:0 10px 22px rgba(20,80,160,.16)}
+.books:before,.books:after{content:"";position:absolute;left:20px;right:10px;height:15px;background:#fff;box-shadow:0 18px 0 #e8f2ff,0 36px 0 #fff}
+.books:before{top:8px}.books:after{top:26px}
+.form{padding:36px 94px 90px}
+.field{height:86px;border:1px solid #ddd;background:#fff;margin-bottom:30px;display:flex;align-items:center;position:relative}
+.field-label{flex:0 0 auto;padding-left:28px;font-size:27px;color:#333;white-space:nowrap}
+.field input,.field select{flex:1;min-width:0;height:100%;border:0;outline:0;padding:0 24px;font-size:27px;color:#333;background:transparent}
+.field select{appearance:none;-webkit-appearance:none;-moz-appearance:none;padding-right:60px;cursor:pointer}
+.field input::placeholder{color:#aaa}
+.select-arrow{position:absolute;right:26px;top:50%;transform:translateY(-50%);font-size:22px;color:#999;pointer-events:none;line-height:1}
+.captcha-field{padding-right:185px}
+.captcha-img{position:absolute;right:20px;top:10px;width:150px;height:64px;cursor:pointer;user-select:none}
+.submit{height:82px;border:0;border-radius:45px;width:100%;background:#39bd78;color:#fff;font-size:29px;cursor:pointer;margin-top:22px}
+.submit:active{transform:scale(.99)}
+.error{color:#e54848;text-align:center;font-size:20px;min-height:30px;margin-top:-8px;margin-bottom:4px}
+.result{padding:0 22px 100px}
+.result-card{border:1px solid #ddd;overflow:hidden}
+.result-head{height:88px;background:#4098ec;color:#fff;display:flex;align-items:center;justify-content:center;font-size:31px}
+.row{display:grid;grid-template-columns:40% 60%;min-height:78px;border-top:1px solid #ddd;font-size:25px}
+.row:first-of-type{border-top:0}
+.cell{padding:19px 24px;border-right:1px solid #ddd;display:flex;align-items:center}
+.cell:last-child{border-right:0}
+.result-back{margin:28px 0 0;font-size:20px;color:#4098ec;background:none;border:0;cursor:pointer}
+.notice{text-align:center;color:#aaa;font-size:13px;margin-top:25px}
+.footer{text-align:center;color:#999;font-size:14px;line-height:2;padding:28px 20px 40px;border-top:1px solid #eee;margin-top:24px}
+.hidden{display:none!important}
+
+@media(max-width:600px){
+ .topbar{height:88px}.topbar .back{left:24px;font-size:36px}.topbar-title{font-size:27px}.domain{font-size:15px}
+ .page-title{height:92px;padding:0 28px;font-size:30px}
+ .banner{height:414px;margin:0 22px;border-radius:2px 2px 35px 35px}
+ .banner-text{left:40px;top:100px;font-size:52px;letter-spacing:8px}
+ .banner-art{right:15px;transform:scale(.8);transform-origin:bottom right}
+ .form{padding:35px 94px 90px}
+ .field{height:84px;margin-bottom:30px}.field-label{font-size:24px;padding-left:22px}.field input,.field select{font-size:25px;padding:0 16px}
+ .submit{height:80px;font-size:28px}
+ .row{font-size:22px}.cell{padding:18px 20px}
+}
+@media(max-width:430px){
+ .form{padding-left:72px;padding-right:72px}
+ .banner-text{font-size:45px;left:28px}
+ .field-label{font-size:20px;padding-left:14px}
+ .captcha-field{padding-right:112px}
+ .captcha-img{width:100px;right:8px}
+ .row{grid-template-columns:38% 62%;font-size:18px}
+ .cell{padding:15px 12px}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="back">×</div>
+    <div class="topbar-title" id="topTitle">辽宁中医药大学</div>
+    <div class="domain" id="domainText">zs.lnutcm.edu.cn</div>
+    <div class="more">•••</div>
+  </header>
+
+  <section id="queryPage">
+    <div class="page-title"><span>‹</span>&nbsp;&nbsp;录取查询</div>
+    <div class="banner">
+      <div class="banner-text" id="bannerText">录取查询</div>
+      <div class="banner-art">
+        <div class="tower t1"></div><div class="tower t2"></div><div class="tower t3"></div>
+        <div class="books"></div>
+      </div>
+    </div>
+
+    <main class="form">
+      <div class="field">
+        <select id="examType"></select>
+        <span class="select-arrow">▼</span>
+      </div>
+      <div class="field">
+        <label class="field-label" for="idNo">身份证号</label>
+        <input id="idNo" placeholder="请输入身份证号" autocomplete="off">
+      </div>
+      <div class="field">
+        <label class="field-label" for="name">姓名</label>
+        <input id="name" placeholder="请输入姓名" autocomplete="off">
+      </div>
+      <div class="field captcha-field">
+        <label class="field-label" for="captchaInput">验证码</label>
+        <input id="captchaInput" placeholder="请输入验证码" autocomplete="off">
+        <canvas id="captchaCanvas" class="captcha-img" width="150" height="64" title="点击刷新验证码"></canvas>
+      </div>
+      <div id="error" class="error"></div>
+      <button class="submit" id="submitBtn">查询</button>
+    </main>
+    
+  </section>
+
+  <section id="resultPage" class="hidden">
+    <div class="page-title"><span>‹</span>&nbsp;&nbsp;录取结果</div>
+    <main class="result">
+      <div class="result-card">
+        <div class="result-head">考生录取信息</div>
+        <div id="resultRows"></div>
+      </div>
+      <button class="result-back" id="backBtn">‹ 返回查询</button>
+      
+    </main>
+  </section>
+
+  <footer class="footer">
+    <div>辽宁中医药大学招生办公室</div>
+    <div>© 辽宁中医药大学 版权所有</div>
+  </footer>
+</div>
+
+<script>
+const DEFAULT_CONFIG = {
+  schoolName: "辽宁中医药大学",
+  examTypes: ["高考录取", "专升本", "第二学士学位"],
+  title: "录取查询",
+  domain: "zs.lnutcm.edu.cn",
+  idNo: "210124200402081029",
+  name: "彭佳俏",
+  result: {
+    "姓名": "彭佳俏",
+    "性别": "女",
+    "身份证号": "210124200402081029",
+    "考生号": "26210102391442",
+    "省份": "辽宁",
+    "科类": "科类护理组",
+    "录取专业": "专业护理学",
+    "是否录取": "是"
+  }
+};
+
+const config = structuredClone(DEFAULT_CONFIG);
+let currentCaptcha = "";
+
+function applyConfig(){
+  document.getElementById("topTitle").textContent = config.schoolName || config.title;
+  document.getElementById("domainText").textContent = config.domain;
+  document.getElementById("bannerText").textContent = config.title;
+  const select = document.getElementById("examType");
+  select.innerHTML = "";
+  (config.examTypes || [config.examType]).forEach(t=>{
+    const op = document.createElement("option");
+    op.textContent = t; op.value = t;
+    select.appendChild(op);
+  });
+  drawCaptcha();
+  renderResult();
+}
+
+function randomCaptcha(){
+  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+  let s = "";
+  for(let i=0;i<4;i++) s += chars[Math.floor(Math.random()*chars.length)];
+  return s;
+}
+
+function drawCaptcha(){
+  currentCaptcha = randomCaptcha();
+  const canvas = document.getElementById("captchaCanvas");
+  const ctx = canvas.getContext("2d");
+  ctx.clearRect(0,0,150,64);
+  ctx.fillStyle = "#eef8f4"; ctx.fillRect(0,0,150,64);
+  for(let i=0;i<80;i++){
+    ctx.fillStyle = `rgba(${40+Math.random()*180},${80+Math.random()*140},${80+Math.random()*160},.35)`;
+    ctx.fillRect(Math.random()*150,Math.random()*64,1+Math.random()*3,1+Math.random()*3);
+  }
+  ctx.strokeStyle = "#76a99a";
+  for(let i=0;i<5;i++){
+    ctx.beginPath(); ctx.moveTo(Math.random()*150,Math.random()*64);
+    ctx.lineTo(Math.random()*150,Math.random()*64); ctx.stroke();
+  }
+  ctx.font = "bold 38px Arial";
+  ctx.textBaseline = "middle";
+  const chars = String(currentCaptcha).split("");
+  chars.forEach((ch,i)=>{
+    ctx.save();
+    ctx.translate(15+i*32,32);
+    ctx.rotate((Math.random()-.5)*.45);
+    ctx.fillStyle = ["#3c9c76","#444","#296e9b","#7a7a39"][i%4];
+    ctx.fillText(ch,0,0);
+    ctx.restore();
+  });
+}
+
+function renderResult(){
+  const box = document.getElementById("resultRows");
+  box.innerHTML = "";
+  Object.entries(config.result || {}).forEach(([k,v])=>{
+    const row = document.createElement("div");
+    row.className = "row";
+    row.innerHTML = `<div class="cell">${escapeHtml(k)}</div><div class="cell">${escapeHtml(v)}</div>`;
+    box.appendChild(row);
+  });
+}
+
+function escapeHtml(v){
+  return String(v).replace(/[&<>"']/g, m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+}
+
+function query(){
+  const id = document.getElementById("idNo").value.trim();
+  const name = document.getElementById("name").value.trim();
+  const captcha = document.getElementById("captchaInput").value.trim().toUpperCase();
+  const error = document.getElementById("error");
+
+  if(id !== config.idNo || name !== config.name || captcha !== String(currentCaptcha).toUpperCase()){
+    error.textContent = "信息填写错误，请核对后重新查询";
+    drawCaptcha();
+    document.getElementById("captchaInput").value = "";
+    return;
+  }
+  error.textContent = "";
+  document.getElementById("queryPage").classList.add("hidden");
+  document.getElementById("resultPage").classList.remove("hidden");
+  window.scrollTo(0,0);
+}
+
+document.getElementById("submitBtn").addEventListener("click", query);
+document.getElementById("captchaCanvas").addEventListener("click", drawCaptcha);
+document.getElementById("backBtn").addEventListener("click", ()=>{
+  document.getElementById("resultPage").classList.add("hidden");
+  document.getElementById("queryPage").classList.remove("hidden");
+  document.getElementById("captchaInput").value = "";
+  window.scrollTo(0,0);
+});
+
+applyConfig();
+</script>
+</body>
+</html>
