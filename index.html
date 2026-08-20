@@ -2,13 +2,15 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <title>辽宁中医药大学本科招生录取查询</title>
 <style>
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;background:#f7f8fa;color:#222;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",Arial,sans-serif}
+html,body{margin:0;padding:0;background:#f7f8fa;color:#222;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",Arial,sans-serif;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{min-height:100vh}
 button,input,select{font:inherit}
+*{-webkit-tap-highlight-color:transparent}
+body.in-wechat .topbar .back,body.in-wechat .topbar .more,body.in-wechat .topbar .domain{display:none}
 .app{max-width:921px;margin:0 auto;min-height:100vh;background:#fff;position:relative}
 .topbar{height:88px;background:#f5f6f8;display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid #eee}
 .topbar .back{position:absolute;left:28px;font-size:38px;font-weight:300;line-height:1}
@@ -247,6 +249,10 @@ document.getElementById("backBtn").addEventListener("click", ()=>{
   document.getElementById("captchaInput").value = "";
   window.scrollTo(0,0);
 });
+
+if(/MicroMessenger/i.test(navigator.userAgent)){
+  document.body.classList.add("in-wechat");
+}
 
 applyConfig();
 </script>
